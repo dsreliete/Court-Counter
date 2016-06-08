@@ -47,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        scoreViewA = (TextView) findViewById(R.id.team_a_score);
-        scoreViewB = (TextView) findViewById(R.id.team_b_score);
+        initTextView();
 
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
@@ -61,8 +60,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "on Create");
         setContentView(R.layout.activity_main);
 
-        scoreViewA = (TextView) findViewById(R.id.team_a_score);
-        scoreViewB = (TextView) findViewById(R.id.team_b_score);
+        initTextView();
 
     }
 
@@ -101,6 +99,12 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.i(TAG, "on Destroy");
     }
+
+    public void initTextView(){
+        scoreViewA = (TextView) findViewById(R.id.team_a_score);
+        scoreViewB = (TextView) findViewById(R.id.team_b_score);
+    }
+
 
     public void displayForTeamA(int score) {
         scoreViewA.setText(String.valueOf(score));
